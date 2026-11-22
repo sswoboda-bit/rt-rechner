@@ -3,43 +3,57 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Durchstrahlungsprüfung nach DIN EN ISO 17636-1</title>
 <style>
-:root{box-sizing:border-box;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);color-scheme:light dark;--bg:#eef1f8;--cd:#fff;--tx:#0b1650;--mu:#5a6488;--bd:#c9d1e6;--ac:#c8102e;--ok:#17703a;--wn:#a15c07;--er:#b3122b}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);color-scheme:light dark;--bg:#f2f3f7;--cd:#fff;--tx:#141a33;--mu:#6b7290;--bd:#e4e7f0;--in:#f3f4f8;--ac:#c8102e;--ok:#17703a;--wn:#9a5606;--er:#b3122b;--okb:#e5f3e9;--wnb:#fcf0df;--erb:#fce8eb;--sh:0 1px 2px rgba(20,26,51,.05),0 6px 20px rgba(20,26,51,.06)}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1120;--cd:#161b2e;--tx:#e8ecfa;--mu:#9aa4c6;--bd:#2c3555;--ac:#ff5d72;--ok:#4cc582;--wn:#f2a63b;--er:#ff6f82}}
-:root[data-theme="dark"]{--bg:#0d1120;--cd:#161b2e;--tx:#e8ecfa;--mu:#9aa4c6;--bd:#2c3555;--ac:#ff5d72;--ok:#4cc582;--wn:#f2a63b;--er:#ff6f82}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0d14;--cd:#171a26;--tx:#eef0f8;--mu:#9aa1bd;--bd:#262b3d;--in:#21253a;--ac:#ff5d72;--ok:#4cc582;--wn:#f2a63b;--er:#ff6f82;--okb:rgba(76,197,130,.15);--wnb:rgba(242,166,59,.15);--erb:rgba(255,111,130,.15);--sh:none}}
+:root[data-theme="dark"]{--bg:#0b0d14;--cd:#171a26;--tx:#eef0f8;--mu:#9aa1bd;--bd:#262b3d;--in:#21253a;--ac:#ff5d72;--ok:#4cc582;--wn:#f2a63b;--er:#ff6f82;--okb:rgba(76,197,130,.15);--wnb:rgba(242,166,59,.15);--erb:rgba(255,111,130,.15);--sh:none}
 *,*:before,*:after{box-sizing:inherit}
 [hidden]{display:none!important}
-body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.45 "Open Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-.w{max-width:680px;margin:0 auto;padding:16px 16px 40px}
-h1{font-size:1.1rem;font-weight:700;margin:2px 0 14px}
-.tabs{display:flex;overflow-x:auto;border-bottom:2px solid var(--bd);margin-bottom:14px}
-.tabs button{flex:1 0 auto;white-space:nowrap;padding:11px 12px;border:0;border-bottom:3px solid transparent;margin-bottom:-2px;background:none;color:var(--mu);font:inherit;font-weight:600;cursor:pointer}
-.tabs button[aria-selected=true]{color:var(--tx);border-bottom-color:var(--ac)}
-.tabs button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
-.c{background:var(--cd);border:1px solid var(--bd);border-radius:6px;padding:14px;margin-bottom:14px}
-.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media(max-width:440px){.g{grid-template-columns:1fr}.tabs button{padding:11px 6px;font-size:.92rem}}
-label{display:block;font-size:.85rem;color:var(--mu)}
-input,select{width:100%;margin-top:4px;padding:10px;border:1px solid var(--bd);border-radius:6px;background:var(--bg);color:var(--tx);font:inherit}
-.big{font-size:2.8rem;font-weight:700;text-align:center;font-variant-numeric:tabular-nums;line-height:1.1;margin:4px 0}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.45 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+.w{max-width:680px;margin:0 auto;padding:8px 16px calc(92px + env(safe-area-inset-bottom,0px))}
+h1{font-size:1.35rem;font-weight:800;letter-spacing:-.02em;line-height:1.2;margin:14px 4px 16px}
+.tabs{position:fixed;left:0;right:0;bottom:0;z-index:10;display:flex;justify-content:center;gap:4px;padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--cd) 86%,transparent);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-top:1px solid var(--bd)}
+.tabs button{flex:1 1 0;max-width:180px;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 2px;border:0;border-radius:12px;background:none;color:var(--mu);font:inherit;font-size:.72rem;font-weight:600;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.tabs svg{width:25px;height:25px}
+.tabs button[aria-selected=true]{color:var(--ac)}
+.tabs button:focus-visible,input:focus-visible,select:focus-visible,.kb:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+.c{background:var(--cd);border:1px solid var(--bd);border-radius:18px;padding:16px;margin-bottom:14px;box-shadow:var(--sh)}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:440px){.g{grid-template-columns:1fr}}
+label{display:block;font-size:.8rem;font-weight:600;color:var(--mu)}
+input:not([type=checkbox]),select{width:100%;margin-top:6px;padding:12px 14px;border:1.5px solid transparent;border-radius:12px;background-color:var(--in);color:var(--tx);font:inherit;font-size:1rem;font-weight:500;-webkit-appearance:none;appearance:none}
+select{padding-right:36px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%238a90a8' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:12px}
+input:not([type=checkbox]):focus,select:focus{border-color:var(--ac);background-color:var(--cd);outline:none}
+input::placeholder{color:var(--mu);opacity:.7}
+input[type=checkbox]{width:20px!important;height:20px;accent-color:var(--ac);vertical-align:-4px}
+.hero{background:linear-gradient(135deg,#d3183a,#7d0b1e);color:#fff;border:0;box-shadow:0 10px 28px rgba(200,16,46,.28);text-align:center;padding:20px 16px}
+.hero .s{color:rgba(255,255,255,.82);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.hero .m{color:#fff;background:rgba(255,255,255,.16);border-radius:12px;padding:9px 12px;margin-top:12px}
+.hero .m:empty{display:none}
+.big{font-size:3.2rem;font-weight:800;text-align:center;font-variant-numeric:tabular-nums;letter-spacing:-.02em;line-height:1.1;margin:6px 0}
 .s{text-align:center;color:var(--mu);font-size:.85rem}
-.r{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px solid var(--bd)}
-.r b{text-align:right}
-.m{font-size:.9rem;margin:8px 0 0}
+.r{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:11px 0;border-bottom:1px solid var(--bd)}
+.r:last-child{border-bottom:0}
+.r span{color:var(--mu);font-size:.92rem}
+.r b{text-align:right;font-weight:600}
+.r b.ok,.r b.wn,.r b.er{padding:3px 11px;border-radius:999px}
 .ok{color:var(--ok)}.wn{color:var(--wn)}.er{color:var(--er)}
-#bi{display:block;max-width:100%;max-height:300px;margin:0 auto;background:#fff;border-radius:4px;padding:6px}
-.ki{display:block;max-width:100%;max-height:260px;margin:8px auto;background:#fff;border-radius:4px;padding:6px}
-.kg{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:10px 0}.kg figure{flex:1 1 170px;max-width:100%;margin:0;text-align:center}.kg img{display:block;max-width:100%;max-height:150px;margin:0 auto;background:#fff;border-radius:4px;padding:4px}.kg figcaption{font-size:.78rem;color:var(--mu);margin-top:4px}
-.kb{display:block;width:100%;margin:8px 0;padding:10px;border:1px solid var(--bd);border-radius:6px;background:var(--bg);color:var(--tx);font:inherit;font-weight:600;cursor:pointer}.kp figure{flex:1 1 200px;max-width:260px}.kp img{max-height:none;width:100%;padding:0}
-small{display:block;color:var(--mu);font-size:.8rem}
+b.ok{background:var(--okb)}b.wn{background:var(--wnb)}b.er{background:var(--erb)}
+.m{font-size:.88rem;margin:10px 0 0}
+p.m.wn{background:var(--wnb);padding:10px 12px;border-radius:12px}
+p.m.er{background:var(--erb);padding:10px 12px;border-radius:12px}
+#bi{display:block;max-width:100%;max-height:300px;margin:0 auto;background:#fff;border-radius:12px;padding:8px}
+.ki{display:block;max-width:100%;max-height:260px;margin:8px auto;background:#fff;border-radius:12px;padding:6px}
+.kg{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:12px 0}.kg figure{flex:1 1 170px;max-width:100%;margin:0;text-align:center}.kg img{display:block;max-width:100%;max-height:150px;margin:0 auto;background:#fff;border-radius:10px;padding:4px}.kg figcaption{font-size:.78rem;color:var(--mu);margin-top:6px}
+.kb{display:block;width:100%;margin:10px 0;padding:12px;border:0;border-radius:12px;background:var(--in);color:var(--ac);font:inherit;font-weight:700;cursor:pointer}.kp figure{flex:1 1 200px;max-width:260px}.kp img{max-height:none;width:100%;padding:0}
+small{display:block;color:var(--mu);font-size:.78rem;margin:4px 4px 0}
 </style></head><body><div class="w">
 <h1>Durchstrahlungsprüfung nach DIN EN ISO 17636-1</h1>
-<div class="tabs" role="tablist"><button id="b1" role="tab" aria-selected="true">Belichtungsrechner</button><button id="b2" role="tab" aria-selected="false">Norm-Check</button><button id="b4" role="tab" aria-selected="false">Fehler</button></div>
+<div class="tabs" role="tablist"><button id="b1" role="tab" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="14" r="7"/><path d="M12 10.5V14l2.5 2M10 3h4M12 3v4"/></svg>Belichtungsrechner</button><button id="b2" role="tab" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2.5"/><path d="M9 3h6v3H9zM9 13.5l2 2 4-4"/></svg>Norm-Check</button><button id="b4" role="tab" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M20.5 20.5l-4.7-4.7M11 8v3.2M11 13.8v.01"/></svg>Fehler</button></div>
 
 <section id="p1">
+<div class="c hero"><div class="s">Belichtungszeit</div><div class="big" id="t1">-</div><div class="s">Stunden : Minuten : Sekunden</div><p class="m er" id="m1"></p></div>
 <div class="c"><div class="g">
-<label style="grid-column:1/-1">Strahler (Gerätenummer)<select id="st"><option value="">manuell eingeben</select><small id="si" style="text-align:left;margin-top:4px">Strahlerliste wird geladen …</small></label>
-<button id="rl" type="button" hidden style="grid-column:1/-1;padding:9px;border:1px solid var(--bd);border-radius:6px;background:var(--bg);color:var(--tx);font:inherit;cursor:pointer">Strahler neu laden</button>
 <label>Isotop<select id="q1"><option>Se-75<option>Ir-192<option>Co-60</select></label>
 <label>Filmsystem<select id="fl"><option>D2<option>D3<option>D4<option selected>D5<option>D7<option>D8</select></label>
 <label>Aktivität (Ci)<input id="ak" inputmode="decimal"></label>
@@ -47,7 +61,6 @@ small{display:block;color:var(--mu);font-size:.8rem}
 <label>Durchstrahlte Wanddicke (mm)<input id="w1" inputmode="decimal"></label>
 <label>FFA (mm)<input id="ffa1" inputmode="decimal"></label>
 </div></div>
-<div class="c"><div class="s">Belichtungszeit</div><div class="big" id="t1">-</div><div class="s">Stunden : Minuten : Sekunden</div><p class="m er" id="m1"></p></div>
 </section>
 
 <section id="p2" hidden>
@@ -252,32 +265,6 @@ function run(){
  kb();
 }
 const TB=[['b1','p1'],['b2','p2'],['b4','p4']];
-TB.forEach(([b])=>$(b).onclick=()=>TB.forEach(([x,y])=>{$(x).setAttribute('aria-selected',x===b);$(y).hidden=x!==b}));
+TB.forEach(([b])=>$(b).onclick=()=>{TB.forEach(([x,y])=>{$(x).setAttribute('aria-selected',x===b);$(y).hidden=x!==b});scrollTo(0,0)});
 addEventListener('input',run);addEventListener('change',run);run();
-const SID='1rxVFfVCnQiK68emNGGetMzZOkWDFE7hiX-A7d2h8suw',SRC=[],IS={Ir192:'Ir-192',Se75:'Se-75',Co60:'Co-60'};
-const snm=a=>a.replace(/^Iridium\s*/,'Ir ').replace(/^Selen\s*/,'Se ').replace(/^Kobalt\s*/,'Co ').replace(/^Molch\s*/,'').replace(/SK-SE/i,'SK-Se');
-const say=t=>{$('si').textContent=t};
-$('st').onchange=()=>{const s=SRC[$('st').value];if(s){$('q1').value=s.iso;$('ak').value=s.ci;say('Aktivität aus dem Sheet'+(s.date?' (Stand '+s.date+')':'')+': '+s.ci+' Ci')}else say('Aktivität manuell eingeben.')};
-const ld={};
-async function load(){
- try{
-  SRC.length=0;
-  const mcp=window.claude&&await claude.use('mcp');
-  if(!mcp){say('Zugriff auf Google Sheets ist in dieser Ansicht nicht möglich (z. B. in der App). Link im Browser öffnen, angemeldet bei claude.ai. Aktivität manuell eingeben.');$('rl').hidden=false;return}
-  const r=await mcp.callTool('Google Sheets','get_values',{spreadsheetId:SID,range:'Übersicht!A1:E60'});
-  const p=r.payload,rows=Array.isArray(p)?p:(p&&p.values)||[];
-  const date=(rows[1]&&rows[1][3])||'';
-  rows.forEach(x=>{const iso=IS[x[4]],ci=String(x[1]||'').trim();if(iso&&x[0]&&n(ci)>0)SRC.push({name:snm(String(x[0]).trim()),iso,ci,date})});
-  if(!SRC.length){say('Keine Strahler im Sheet gefunden ('+rows.length+' Zeilen gelesen, Typ '+typeof p+'). Aktivität manuell eingeben.');$('rl').hidden=false;return}
-  $('st').replaceChildren(new Option('manuell eingeben',''),...SRC.map((s,i)=>new Option(s.name,i)));
-  say('Strahler wählen oder Aktivität manuell eingeben'+(date?' (Stand '+date+')':'')+'.');
- }catch(e){
-  const c=e&&e.code,M={server_not_connected:'Google Sheets ist nicht verbunden (claude.ai, Einstellungen, Konnektoren).',needs_reauth:'Google Sheets neu verbinden (claude.ai, Einstellungen, Konnektoren).',not_in_manifest:'Zugriff auf Google Sheets ist für diese Seite nicht erlaubt.',approval_required:'Zugriff auf Google Sheets muss erlaubt werden.',consent_required:'Zugriff auf Google Sheets muss erlaubt werden.',selection_required:'Mehrere Google-Sheets-Verbindungen: bitte eine auswählen.',blocked_by_policy:'Google Sheets ist per Richtlinie gesperrt.',tool_error:'Das Sheet konnte nicht gelesen werden (Blatt oder Berechtigung prüfen).'};
-  if(e&&e.retryable&&!ld.tried){ld.tried=1;say('Verbindung wird erneut versucht …');setTimeout(load,Math.min(e.retryAfterMs||2000,5000));return}
-  say((M[c]||'Strahlerliste konnte nicht geladen werden.')+' Aktivität manuell eingeben. ['+(c||'Fehler')+']');
-  $('rl').hidden=false;
- }
-}
-$('rl').onclick=()=>{$('rl').hidden=true;ld.tried=0;say('Strahlerliste wird geladen …');load()};
-load();
 </script></body></html>
