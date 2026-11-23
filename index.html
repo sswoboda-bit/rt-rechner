@@ -1,7 +1,12 @@
 <!doctype html>
 <html lang="de"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Durchstrahlungsprüfung nach DIN EN ISO 17636-1</title>
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="RT-Helper">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>RT-Helper – Durchstrahlungsprüfung nach DIN EN ISO 17636-1</title>
 <style>
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);color-scheme:light dark;--bg:#f2f3f7;--cd:#fff;--tx:#141a33;--mu:#6b7290;--bd:#e4e7f0;--in:#f3f4f8;--ac:#c8102e;--ok:#17703a;--wn:#9a5606;--er:#b3122b;--okb:#e5f3e9;--wnb:#fcf0df;--erb:#fce8eb;--sh:0 1px 2px rgba(20,26,51,.05),0 6px 20px rgba(20,26,51,.06)}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
@@ -47,8 +52,24 @@ p.m.er{background:var(--erb);padding:10px 12px;border-radius:12px}
 .kg{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:12px 0}.kg figure{flex:1 1 170px;max-width:100%;margin:0;text-align:center}.kg img{display:block;max-width:100%;max-height:150px;margin:0 auto;background:#fff;border-radius:10px;padding:4px}.kg figcaption{font-size:.78rem;color:var(--mu);margin-top:6px}
 .kb{display:block;width:100%;margin:10px 0;padding:12px;border:0;border-radius:12px;background:var(--in);color:var(--ac);font:inherit;font-weight:700;cursor:pointer}.kp figure{flex:1 1 200px;max-width:260px}.kp img{max-height:none;width:100%;padding:0}
 small{display:block;color:var(--mu);font-size:.78rem;margin:4px 4px 0}
+.nc h3{margin:0 0 12px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--mu)}
+.ktg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.kt{background:var(--in);border-radius:14px;padding:12px}
+.kt span{display:block;font-size:.75rem;font-weight:600;color:var(--mu)}
+.kt b{display:block;font-size:1.35rem;font-weight:800;letter-spacing:-.01em;line-height:1.2;margin-top:3px;overflow-wrap:anywhere}
+.kt small{margin:4px 0 0;font-size:.75rem;font-weight:600;color:var(--wn)}
+.ru{margin-top:6px}
+.hl{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.hl li{padding:10px 12px;border-radius:12px;background:var(--in);border-left:4px solid var(--mu);font-size:.88rem}
+.hl li.wn{background:var(--wnb);border-left-color:var(--wn)}
+.hl li.er{background:var(--erb);border-left-color:var(--er)}
+.fn{font-size:.8rem;color:var(--mu);margin:10px 0 0}
+.hd{display:flex;align-items:center;gap:12px;margin:14px 4px 16px}
+.hd img{flex:none;height:44px;width:auto;background:#fff;border-radius:10px;padding:6px 8px;box-shadow:var(--sh)}
+.hd h1{margin:0;font-size:1.5rem;line-height:1.1}
+.hd .sub{font-size:.8rem;font-weight:600;color:var(--mu);margin-top:3px;line-height:1.3}
 </style></head><body><div class="w">
-<h1>Durchstrahlungsprüfung nach DIN EN ISO 17636-1</h1>
+<header class="hd"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xLjE2NDYzNzUzIC0xLjE2NDYzNzUzIDcwLjg3NDI3MzA2IDQxLjE1MDUyNjA2Ij48cGF0aCBkPSJNIDUuNjgyNSwzNy40ODUgTCA0LjI5NzUsMzcuNDg1IEwgMy44MzEyNSwzOC43MzI1IEwgMi4xNjc1LDM4LjczMjUgTCA0LjcxMjUsMzIuNDMyNSBMIDUuNjgyNSwzMi40MzI1IEwgNS42ODI1LDM0LjA0NSBMIDUuNjQ1LDMzLjkzMTI1IEwgNC43MTI1LDM2LjM4ODc1IEwgNS42ODI1LDM2LjM4ODc1IEwgNS42ODI1LDM3LjQ4NSB6IE0gMjcuMDUyNSwzMi44MzUgTCAyNy4wNTI1LDM0LjA1NzUgQyAyNi4yMDg3NSwzMy42OTI1IDI1LjU0MTI1LDMzLjUwMzc1IDI1LjA1LDMzLjUwMzc1IEMgMjQuNzcyNSwzMy41MDM3NSAyNC41NDUsMzMuNTQxMjUgMjQuMzgxMjUsMzMuNjQyNSBDIDI0LjIxNzUsMzMuNzMgMjQuMTMsMzMuODU2MjUgMjQuMTMsMzQuMDIgQyAyNC4xMywzNC4yNiAyNC40MDc1LDM0LjQ4NjI1IDI0Ljk2MTI1LDM0LjcgQyAyNS43OCwzNS4wMTUgMjYuMjk3NSwzNS4yNDI1IDI2LjUxMTI1LDM1LjM4MTI1IEMgMjcuMDY1LDM1Ljc1ODc1IDI3LjM0MjUsMzYuMjYyNSAyNy4zNDI1LDM2LjkwNSBDIDI3LjM0MjUsMzcuNDk3NSAyNy4xMTYyNSwzNy45NjM3NSAyNi42NjI1LDM4LjMwMzc1IEMgMjYuMjIxMjUsMzguNjQzNzUgMjUuNjQxMjUsMzguODIxMjUgMjQuOTExMjUsMzguODIxMjUgQyAyNC40MiwzOC44MjEyNSAyMy45OTEyNSwzOC43NTc1IDIzLjYsMzguNjMxMjUgQyAyMy4zNzM3NSwzOC41NTYyNSAyMy4wNTg3NSwzOC40MTc1IDIyLjY0MjUsMzguMjAzNzUgTCAyMi42NDI1LDM2Ljg0MjUgQyAyMy4wOTYyNSwzNy4xNDUgMjMuNDg3NSwzNy4zNTg3NSAyMy44MDI1LDM3LjQ4NSBDIDI0LjExNjI1LDM3LjU5ODc1IDI0LjQ0NSwzNy42NjEyNSAyNC43OTc1LDM3LjY2MTI1IEMgMjUuNDE1LDM3LjY2MTI1IDI1LjcxNzUsMzcuNDcyNSAyNS43MTc1LDM3LjA4MTI1IEMgMjUuNzE3NSwzNi44MTc1IDI1LjQ0LDM2LjU3NzUgMjQuODg2MjUsMzYuMzYzNzUgQyAyNC4wNTM3NSwzNi4wNDg3NSAyMy41Mzc1LDM1LjgyMTI1IDIzLjM0ODc1LDM1LjY5NjI1IEMgMjIuNzkzNzUsMzUuMzE3NSAyMi41MTYyNSwzNC44MTM3NSAyMi41MTYyNSwzNC4xNTg3NSBDIDIyLjUxNjI1LDMzLjYwMzc1IDIyLjczMTI1LDMzLjE2Mzc1IDIzLjE3MjUsMzIuODM1IEMgMjMuNiwzMi41MDg3NSAyNC4xOTI1LDMyLjM0Mzc1IDI0LjkxMTI1LDMyLjM0Mzc1IEMgMjUuNTc4NzUsMzIuMzQzNzUgMjYuMjk3NSwzMi41MDg3NSAyNy4wNTI1LDMyLjgzNSB6IE0gMTcuMzEzNzUsMzIuNDMyNSBMIDE4Ljg4ODc1LDMyLjQzMjUgTCAxOC44ODg3NSwzNi4wMTEyNSBDIDE4Ljg4ODc1LDM2Ljk4MTI1IDE4LjU4NjI1LDM3LjcxMjUgMTcuOTY4NzUsMzguMjAzNzUgQyAxNy40MjYyNSwzOC42MDYyNSAxNi42ODI1LDM4LjgyMTI1IDE1LjczNzUsMzguODIxMjUgQyAxNC43Njc1LDM4LjgyMTI1IDE0LjAxMjUsMzguNTkzNzUgMTMuNDcsMzguMTUyNSBDIDEyLjg3NzUsMzcuNjYxMjUgMTIuNTc1LDM2Ljk1NjI1IDEyLjU3NSwzNi4wMTEyNSBMIDEyLjU3NSwzMi40MzI1IEwgMTQuMTUsMzIuNDMyNSBMIDE0LjE1LDM2LjA0ODc1IEMgMTQuMTUsMzYuNDkgMTQuMzAxMjUsMzYuODQyNSAxNC41OTEyNSwzNy4xMDc1IEMgMTQuODgxMjUsMzcuMzcxMjUgMTUuMjU4NzUsMzcuNDk3NSAxNS43MTI1LDM3LjQ5NzUgQyAxNi4xNjYyNSwzNy40OTc1IDE2LjU0NSwzNy4zODM3NSAxNi44MjEyNSwzNy4xNDUgQyAxNy4xNDg3NSwzNi44Njc1IDE3LjMxMzc1LDM2LjQ2NSAxNy4zMTM3NSwzNS45MzUgTCAxNy4zMTM3NSwzMi40MzI1IHogTSA2LjUyNzUsMzIuNDMyNSBMIDkuMzM3NSwzOC43MzI1IEwgNy42MzYyNSwzOC43MzI1IEwgNy4xMiwzNy40ODUgTCA1LjY4MjUsMzcuNDg1IEwgNS42ODI1LDM2LjM4ODc1IEwgNi42NjYyNSwzNi4zODg3NSBMIDUuNjgyNSwzNC4wNDUgTCA1LjY4MjUsMzIuNDMyNSBMIDYuNTI3NSwzMi40MzI1IiBmaWxsPSIjMDAwMDAwIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNIDM5LjQ1MTI1LDE5LjUzIEwgMzkuMjUsMjAuNDI1IEMgMzkuMDM1LDIxLjI0Mzc1IDM4LjcwNzUsMjIuNDAyNSAzNi45OTM3NSwyMy44Nzc1IEMgMzQuOTAyNSwyNS42Mjg3NSAzMS40MjUsMjYuMjIxMjUgMjguNzY2MjUsMjYuMTgyNSBDIDI2LjEwNzUsMjYuMTU3NSAyMy4yNiwyNS45MDYyNSAyMS40MDc1LDI0LjM1NjI1IEMgMTkuNDY3NSwyMi43MDUgMTkuNzA3NSwyMC44MTUgMTkuNzgyNSwyMC4xODUgQyAxOS43ODI1LDIwLjE4NSAxOS44MDc1LDE5Ljk3MTI1IDE5Ljg4Mzc1LDE5LjU4IEMgMjAuNDI1LDE2Ljg3MTI1IDIyLjU1NSw2LjA0NzUgMjIuNTU1LDYuMDQ3NSBMIDI3Ljc0NjI1LDYuMDQ3NSBDIDI3Ljc0NjI1LDYuMDQ3NSAyNS4zMTM3NSwxOC4zOTYyNSAyNS4yMDEyNSwxOC45NjI1IEMgMjUuMSwxOS42MzEyNSAyNS4xNzUsMjAuMTYgMjUuNzY3NSwyMC40NjI1IEMgMjYuNzg4NzUsMjAuOTc4NzUgMjguNTAxMjUsMjEuMTE3NSAyOS40OTc1LDIxLjA5MjUgQyAzMS42NjUsMjEuMDE3NSAzMi43NDc1LDIwLjU2Mzc1IDMzLjI2NSwyMC4zMTEyNSBDIDMzLjgwNjI1LDIwLjA0NjI1IDM0LjE0NjI1LDE5LjYxODc1IDM0LjM3Mzc1LDE4LjgyNSBMIDM0LjM3Mzc1LDE4LjgzNzUgTCAzNi44NTYyNSw2LjA0NzUgTCA0Mi4wMjEyNSw2LjA0NzUgTCAzOS40NTEyNSwxOS41MyIgZmlsbD0iIzAwMDAwMCIgZmlsbC1ydWxlPSJldmVub2RkIi8+PHBhdGggZD0iTSAyMC42NTI1LDYuMTExMjUgTCAwLjk0NSw2LjExMTI1IEwgMCwxMC44OTg3NSBMIDcuMzMzNzUsMTAuODk4NzUgTCA0LjM5NzUsMjUuOTA2MjUgTCA5LjY1MjUsMjUuOTA2MjUgTCAxMi41NzUsMTAuODk4NzUgTCAxOS43MzI1LDEwLjg5ODc1IEwgMjAuNjUyNSw2LjExMTI1IiBmaWxsPSIjMDAwMDAwIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48cGF0aCBkPSJNIDQzLjIwNjI1LDAgTCA0Mi41NjM3NSwzLjM1MTI1IEwgMjMuMDcxMjUsMy4zNTEyNSBMIDIzLjcyNjI1LDAgTCA0My4yMDYyNSwwIiBmaWxsPSIjMDAwMDAwIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48cGF0aCBkPSJNIDYyLjE0Mzc1LDAgTCA1MS4yOTUsMTUuNDg1IEwgNDguMjMzNzUsNi4wNzM3NSBMIDQyLjgwMjUsNi4wNzM3NSBMIDQ5LjU1NjI1LDI3LjA3NzUgTCA2OC41NDUsMCBMIDYyLjE0Mzc1LDAiIGZpbGw9IiNmZjAwMDAiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjxwYXRoIGQ9Ik0gNDIuNjEzNzUsMzIuNDMyNSBMIDQyLjYxMzc1LDMzLjU3ODc1IEMgNDIuNjAxMjUsMzMuNTc4NzUgNDIuNTg4NzUsMzMuNTc4NzUgNDIuNTYzNzUsMzMuNTc4NzUgTCA0MS43NywzMy41Nzg3NSBMIDQxLjc3LDM1LjAxNSBMIDQyLjYwMTI1LDM1LjAxNSBDIDQyLjYxMzc1LDM1LjAxNSA0Mi42MTM3NSwzNS4wMTUgNDIuNjEzNzUsMzUuMDE1IEwgNDIuNjEzNzUsMzYuMjg3NSBDIDQyLjQ4NzUsMzYuMjEyNSA0Mi4zNjI1LDM2LjE3NSA0Mi4yMjM3NSwzNi4xNzUgTCA0MS43NywzNi4xNzUgTCA0MS43NywzOC43MzI1IEwgNDAuMTk1LDM4LjczMjUgTCA0MC4xOTUsMzIuNDMyNSBMIDQyLjYxMzc1LDMyLjQzMjUgeiBNIDM2LjY3ODc1LDMyLjQzMjUgTCAzNi42Nzg3NSwzMy41Nzg3NSBMIDM0LjM5ODc1LDMzLjU3ODc1IEwgMzQuMzk4NzUsMzguNzMyNSBMIDMyLjgzNjI1LDM4LjczMjUgTCAzMi44MzYyNSwzMy41Nzg3NSBMIDMwLjU0MjUsMzMuNTc4NzUgTCAzMC41NDI1LDMyLjQzMjUgTCAzNi42Nzg3NSwzMi40MzI1IHogTSA0OS4wOSwzMi40MzI1IEwgNTAuNjY1LDMyLjQzMjUgTCA1MC42NjUsMzguNzMyNSBMIDQ5LjA5LDM4LjczMjUgTCA0OS4wOSwzMi40MzI1IHogTSA0Mi42MTM3NSwzNi4yODc1IEwgNDIuNjEzNzUsMzUuMDE1IEMgNDMuMTgxMjUsMzUuMDE1IDQzLjQ3MTI1LDM0Ljc3NjI1IDQzLjQ3MTI1LDM0LjI5NzUgQyA0My40NzEyNSwzMy44MzEyNSA0My4xODEyNSwzMy41OTEyNSA0Mi42MTM3NSwzMy41Nzg3NSBMIDQyLjYxMzc1LDMyLjQzMjUgTCA0My4wMTc1LDMyLjQzMjUgQyA0My42NDc1LDMyLjQzMjUgNDQuMTUxMjUsMzIuNjA4NzUgNDQuNTQxMjUsMzIuOTg3NSBDIDQ0LjkwNzUsMzMuMzI3NSA0NS4wODM3NSwzMy43NDI1IDQ1LjA4Mzc1LDM0LjIzMzc1IEMgNDUuMDgzNzUsMzQuOTQgNDQuNzE3NSwzNS40NTYyNSA0NCwzNS43ODM3NSBDIDQ0LjI3NzUsMzUuOTIyNSA0NC41NDEyNSwzNi4yMjUgNDQuNzgxMjUsMzYuNjkxMjUgQyA0NS4wOTYyNSwzNy4zNzEyNSA0NS40MTEyNSwzOC4wNTI1IDQ1LjcyNjI1LDM4LjczMjUgTCA0NCwzOC43MzI1IEMgNDMuNzM1LDM4LjE0IDQzLjQ1NzUsMzcuNTM1IDQzLjE4MTI1LDM2Ljk0Mzc1IEMgNDMuMDA1LDM2LjYyODc1IDQyLjgxNSwzNi40MTM3NSA0Mi42MTM3NSwzNi4yODc1IHogTSA1Ni42LDMyLjQzMjUgTCA1Ni42LDM0LjA0NSBMIDU2LjU2MjUsMzMuOTMxMjUgTCA1NS42MywzNi4zODg3NSBMIDU2LjYsMzYuMzg4NzUgTCA1Ni42LDM3LjQ4NSBMIDU1LjIxMzc1LDM3LjQ4NSBMIDU0Ljc0NzUsMzguNzMyNSBMIDUzLjA4NSwzOC43MzI1IEwgNTUuNjMsMzIuNDMyNSBMIDU2LjYsMzIuNDMyNSB6IE0gNTYuNiwzNy40ODUgTCA1Ni42LDM2LjM4ODc1IEwgNTcuNTgyNSwzNi4zODg3NSBMIDU2LjYsMzQuMDQ1IEwgNTYuNiwzMi40MzI1IEwgNTcuNDQzNzUsMzIuNDMyNSBMIDYwLjI1Mzc1LDM4LjczMjUgTCA1OC41NTI1LDM4LjczMjUgTCA1OC4wMzYyNSwzNy40ODUgTCA1Ni42LDM3LjQ4NSIgZmlsbD0iIzAwMDAwMCIgZmlsbC1ydWxlPSJub256ZXJvIi8+PC9zdmc+" alt="TÜV Austria"><div><h1>RT-Helper</h1><div class="sub">Durchstrahlungsprüfung nach DIN EN ISO 17636-1</div></div></header>
 <div class="tabs" role="tablist"><button id="b1" role="tab" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="14" r="7"/><path d="M12 10.5V14l2.5 2M10 3h4M12 3v4"/></svg>Belichtungsrechner</button><button id="b2" role="tab" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2.5"/><path d="M9 3h6v3H9zM9 13.5l2 2 4-4"/></svg>Norm-Check</button><button id="b4" role="tab" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M20.5 20.5l-4.7-4.7M11 8v3.2M11 13.8v.01"/></svg>Fehler</button></div>
 
 <section id="p1">
@@ -75,7 +96,7 @@ small{display:block;color:var(--mu);font-size:.78rem;margin:4px 4px 0}
 <label>IQI-Lage<select id="lg"><option value="FF">filmfern (FF)<option value="FN">filmnah (FN)</select></label>
 </div></div>
 <div class="c"><img id="bi" alt="Skizze der gewählten Aufnahmeanordnung"></div>
-<div class="c" id="o2"></div>
+<div id="o2"></div>
 </section>
 <section id="p4" hidden>
 <div class="c"><div class="g">
@@ -242,25 +263,29 @@ function run(){
   if(isFinite(v))N=v;
  }
  const row=(a,b,c='')=>`<div class="r"><span>${a}</span><b class="${c}">${b}</b></div>`;
- let h=row('Geforderter IQI',W==null?'-':'W'+W)+(red?`<p class="m wn">ℹ Ausnahme nach 6.9: zulässig bis W${W-red}, im Bericht vermerken.</p>`:'')+row('Drahtsteg',st)+row('Mindest-FFA',ffa?ffa+' mm':'-')+row('Mindestaufnahmen',N==null?'-':N);
- if(['Bild 5','Bild 13','Bild 14'].includes(bild)){const U=Math.PI*De/10;h+=row('Umfang',De>0?f1(U)+' cm':'-')+row('Abschnitt je Aufnahme',De>0&&N?f1(U/N)+' cm':'-')}
- if(De>0&&De<=100&&t>0)h+=`<p class="m">${t>8?'Bild 11 nicht zulässig (t > 8 mm): Bild 12 nutzen.':'Bild 11 zulässig, Nahtbreite max. '+f1(De/4)+' mm.'}</p>`;
+ const tile=(a,b,x='')=>`<div class="kt"><span>${a}</span><b>${b}</b>${x?`<small>${x}</small>`:''}</div>`;
+ const card=(t,x)=>`<div class="c nc"><h3>${t}</h3>${x}</div>`;
+ const hw=[];
+ if(red)hw.push(['wn',`ℹ Ausnahme nach 6.9: zulässig bis W${W-red}, im Bericht vermerken.`]);
+ let kw='<div class="ktg">'+tile('Geforderter IQI',W==null?'-':'W'+W,red?'Ausnahme: bis W'+(W-red):'')+tile('Drahtsteg',st)+tile('Mindest-FFA',ffa?ffa+' mm':'-')+tile('Mindestaufnahmen',N==null?'-':N)+'</div>';
+ if(['Bild 5','Bild 13','Bild 14'].includes(bild)){const U=Math.PI*De/10;kw+='<div class="ru">'+row('Umfang',De>0?f1(U)+' cm':'-')+row('Abschnitt je Aufnahme',De>0&&N?f1(U/N)+' cm':'-')+'</div>'}
+ if(De>0&&De<=100&&t>0)hw.push(['',t>8?'Bild 11 nicht zulässig (t > 8 mm): Bild 12 nutzen.':'Bild 11 zulässig, Nahtbreite max. '+f1(De/4)+' mm.']);
+ let qf='';
  if(t>0){
   const[c,s]=qp(qs,w,A);
   const fs=(qs==='Co-60'?(A?5:w<=100?4:5):A?5:4),se=qs==='Se-75'&&!A&&w<12;
   const al=$('wk').value==='a';
+  qf+=row('Quellenprüfung',({ok:'✓',wn:'⚠',er:'✖'})[c]+' '+s,c);
   if(!al){
    const fo=qs==='Se-75'?'0,02–0,2 mm Blei vorn und hinten':qs==='Ir-192'?(A?'0,02–0,2 mm Blei vorn, 0,02–0,2 mm Blei hinten':'0,1–0,2 mm Blei vorn, 0,02–0,2 mm Blei hinten'):'0,25–0,7 mm Stahl oder Kupfer vorn und hinten'+(A?' (Kl. A auch 0,5–2,0 mm Blei)':'');
-   h+=row('Aufnahmefolien (Tab. 3)',fo);
+   qf+=row('Filmsystemklasse (Tab. 3)','mind. C'+(se?fs-1:fs)+(se?' (Se-75 unter 12 mm)':''),se?'wn':'')+row('Aufnahmefolien (Tab. 3)',fo)+'<p class="fn">Film mit Herstellerfolie bis 0,03 mm: zusätzlich 0,1-mm-Bleifolie zwischen Prüfgegenstand und Film (Tab. 3 Fn. b).</p>';
   }else if(qs==='Se-75'){
-   h+=row('Filmsystemklasse (Tab. 4)','mind. C'+(A?5:3))+row('Aufnahmefolien (Tab. 4)','0,2 mm Blei vorn, 0,1–0,2 mm Blei hinten');
-  }else h+=`<p class="m er">${qs} ist in Tabelle 4 (Al/Ti) nicht aufgeführt.</p>`;
-  if(!al)h+='<p class="m">Film mit Herstellerfolie bis 0,03 mm: zusätzlich 0,1-mm-Bleifolie zwischen Prüfgegenstand und Film (Tab. 3 Fn. b).</p>';
-  else if(qs==='Se-75')h+='<p class="m">Anstelle einer 0,2-mm-Bleifolie dürfen zwei 0,1-mm-Bleifolien verwendet werden (Tab. 4 Fn. b).</p>';
-  if(al)h+='<p class="m wn">⚠ Werkstoff Al/Ti: IQI und Quellenprüfung sind hier für Stahl berechnet.</p>';
-  h+=(al?'':row('Filmsystemklasse (Tab. 3)','mind. C'+(se?fs-1:fs)+(se?' (Se-75 unter 12 mm)':''),se?'wn':''))+row('Quellenprüfung',({ok:'✓',wn:'⚠',er:'✖'})[c]+' '+s,c);
-  h+=[qs==='Se-75'&&!A&&w<12&&'Se-75 unter 12 mm, Klasse B: Schwärzung mind. 3,0 und Filmsystem mind. C3 (6.9).',ddi&&De>100&&'De > 100 mm.',bild==='Bild 11'&&t>8&&'t > 8 mm: Bild 12 nutzen.',dws&&De>0&&De<=100&&'De ≤ 100: Bild 11 oder 12 nutzen.',bild==='Bild 14'&&De>0&&ffa>De&&'Min-FFA > De: Bild 13 nutzen.',dws&&!FN&&'BPK filmnah (FN) nötig.',['Bild 1','Bild 2','Bild 11','Bild 12'].includes(bild)&&FN&&'FN nur nach Vereinbarung.',(bild==='Bild 5'||bild==='Bild 8')&&FN&&'FN: Vergleichsaufnahme nötig.'].filter(Boolean).map(x=>`<p class="m wn">⚠ ${x}</p>`).join('');
- }else h+='<p class="m er">Bitte Wanddicke eingeben.</p>';
+   qf+=row('Filmsystemklasse (Tab. 4)','mind. C'+(A?5:3))+row('Aufnahmefolien (Tab. 4)','0,2 mm Blei vorn, 0,1–0,2 mm Blei hinten')+'<p class="fn">Anstelle einer 0,2-mm-Bleifolie dürfen zwei 0,1-mm-Bleifolien verwendet werden (Tab. 4 Fn. b).</p>';
+  }else hw.push(['er',`${qs} ist in Tabelle 4 (Al/Ti) nicht aufgeführt.`]);
+  if(al)hw.push(['wn','⚠ Werkstoff Al/Ti: IQI und Quellenprüfung sind hier für Stahl berechnet.']);
+  [qs==='Se-75'&&!A&&w<12&&'Se-75 unter 12 mm, Klasse B: Schwärzung mind. 3,0 und Filmsystem mind. C3 (6.9).',ddi&&De>100&&'De > 100 mm.',bild==='Bild 11'&&t>8&&'t > 8 mm: Bild 12 nutzen.',dws&&De>0&&De<=100&&'De ≤ 100: Bild 11 oder 12 nutzen.',bild==='Bild 14'&&De>0&&ffa>De&&'Min-FFA > De: Bild 13 nutzen.',dws&&!FN&&'BPK filmnah (FN) nötig.',['Bild 1','Bild 2','Bild 11','Bild 12'].includes(bild)&&FN&&'FN nur nach Vereinbarung.',(bild==='Bild 5'||bild==='Bild 8')&&FN&&'FN: Vergleichsaufnahme nötig.'].filter(Boolean).forEach(x=>hw.push(['wn','⚠ '+x]));
+ }else hw.unshift(['er','Bitte Wanddicke eingeben.']);
+ const h=card('Kennwerte',kw)+(hw.length?card('Hinweise ('+hw.length+')','<ul class="hl">'+hw.map(([c,x])=>`<li class="${c}">${x}</li>`).join('')+'</ul>'):'')+(qf?card('Strahlenquelle und Film',qf):'');
  $('o2').innerHTML=h;
  kb();
 }
