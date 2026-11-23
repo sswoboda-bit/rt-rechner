@@ -47,7 +47,8 @@ b.ok{background:var(--okb)}b.wn{background:var(--wnb)}b.er{background:var(--erb)
 .m{font-size:.88rem;margin:10px 0 0}
 p.m.wn{background:var(--wnb);padding:10px 12px;border-radius:12px}
 p.m.er{background:var(--erb);padding:10px 12px;border-radius:12px}
-#bi{display:block;max-width:100%;max-height:300px;margin:0 auto;background:#fff;border-radius:12px;padding:8px}
+.bw{grid-column:1/-1;background:#fff;border-radius:12px;padding:8px}
+#bi{display:block;max-width:100%;max-height:260px;margin:0 auto}
 .ki{display:block;max-width:100%;max-height:260px;margin:8px auto;background:#fff;border-radius:12px;padding:6px}
 .kg{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:12px 0}.kg figure{flex:1 1 170px;max-width:100%;margin:0;text-align:center}.kg img{display:block;max-width:100%;max-height:150px;margin:0 auto;background:#fff;border-radius:10px;padding:4px}.kg figcaption{font-size:.78rem;color:var(--mu);margin-top:6px}
 .kb{display:block;width:100%;margin:10px 0;padding:12px;border:0;border-radius:12px;background:var(--in);color:var(--ac);font:inherit;font-weight:700;cursor:pointer}.kp figure{flex:1 1 200px;max-width:260px}.kp img{max-height:none;width:100%;padding:0}
@@ -88,6 +89,7 @@ small{display:block;color:var(--mu);font-size:.78rem;margin:4px 4px 0}
 <div class="c"><div class="g">
 <label>Prüfklasse<select id="pk"><option>A<option>B</select></label>
 <label>Aufnahmeanordnung<select id="bd"></select></label>
+<div class="bw"><img id="bi" alt="Skizze der gewählten Aufnahmeanordnung"></div>
 <label>Isotop<select id="q2"><option>Se-75<option>Ir-192<option>Co-60</select></label>
 <label>Werkstoff<select id="wk"><option value="s">Stahl / Cu / Ni<option value="a">Al / Ti</select></label>
 <label>Strahlergröße d (mm)<input id="d" inputmode="decimal" value="3,0"></label>
@@ -95,7 +97,6 @@ small{display:block;color:var(--mu);font-size:.78rem;margin:4px 4px 0}
 <label>Rohr<select id="dn"></select><input id="de" inputmode="decimal" placeholder="Ø in mm" hidden></label>
 <label>IQI-Lage<select id="lg"><option value="FF">filmfern (FF)<option value="FN">filmnah (FN)</select></label>
 </div></div>
-<div class="c"><img id="bi" alt="Skizze der gewählten Aufnahmeanordnung"></div>
 <div id="o2"></div>
 </section>
 <section id="p4" hidden>
@@ -174,7 +175,7 @@ const T2=[
 {g:3,k:'618',t:'618 Schwellung',f:'',r:()=>TX,im:['618']}
 ];
 const KF={s:'Nennwanddicke s der Naht (mm)',wp:'Nahtbreite wp (mm)',A:'Flächenanteil A (%)',d:'Porendurchmesser d (mm)',dA:'Durchmesser Porenhüllfläche dA (mm)',l:'Länge l (mm)',Sl:'Summe der Längen Σl (mm)',h:'Breite oder Höhe h (mm)',t:'Grundwerkstoffdicke t (mm)',b:'Breite b der Überhöhung (mm)',a:'Nennmaß der Kehlnahtdicke a (mm)',aA:'Tatsächliche Kehlnahtdicke aA (mm)',len:'Nahtlänge (mm, nur wenn unter 100)',mx:'Längste Einzelanzeige (mm)'};
-const LV={1:'Stufe 1: Qualitätsstufe B (ISO 5817), Prüfklasse B.',2:'Stufe 2: Qualitätsstufe C, Prüfklasse B (Aufnahmeanzahl bei Rundnähten darf Klasse A entsprechen).',3:'Stufe 3: Qualitätsstufe D, Prüfklasse A.'};
+const LV={1:'Stufe 1: Qualitätsstufe B (ISO 5817), Prüfklasse B (ISO 17636-1).',2:'Stufe 2: Qualitätsstufe C (ISO 5817), Prüfklasse B (ISO 17636-1); bei Rundnähten darf die Aufnahmeanzahl Klasse A entsprechen.',3:'Stufe 3: Qualitätsstufe D (ISO 5817), Prüfklasse A (ISO 17636-1).'};
 const GN=['Innere Unregelmäßigkeiten (ISO 10675-1, Tabelle 4)','Oberflächenunregelmäßigkeiten (ISO 10675-1, Tabelle 5)','Weitere Fehlerarten (nur ISO 5817, Tabelle 1)','Nur Klassifizierung (ISO 6520-1)'];
 const RF={"516":["1.18",18],"5213":["1.20",19],"5214":["1.21",19],"1": ["2.1", 20], "2a": ["2.3", 20], "2b": ["2.3", 20], "3b": ["2.4", 21], "4": ["2.5", 22], "5": ["2.6", 24], "6": ["2.7", 24], "7": ["2.8", 24], "8": ["2.9", 25], "9": ["2.10", 25], "10": ["2.11", 25], "11": ["2.12", 25], "12": ["2.13", 26], "13": ["1.2", 11], "14": ["1.7", 13], "15": ["1.8", 14], "16": ["1.11", 15], "17": ["1.22", 19], "18": ["1.23", 19], "19": ["1.17", 18], "20": ["1.19", 18], "21": ["1.14", 16], "22": ["3.1", 27], "22c": ["3.1", 27], "502": ["1.9", 14], "503": ["1.10", 14], "506": ["1.13", 16], "510": ["1.15", 16], "512": ["1.16", 17], "617": ["3.2", 28]};
 const IC={"5212":"Zu große Nahtdicke 5211 und Nahtbreite 5212","5213":"Zu kleine Kehlnahtdicke 5213","5214":"Zu große Kehlnahtdicke 5214","1011__1012__1013__1014": "Längsriss 101: 1011 Schweißgut, 1012 Nahtübergang, 1013 WEZ, 1014 Grundwerkstoff", "1021__1023__1024": "Querriss 102: 1021 Schweißgut, 1023 WEZ, 1024 Grundwerkstoff", "1031__1033__1034": "Sternförmige Risse 103: 1031 Schweißgut, 1033 WEZ, 1034 Grundwerkstoff", "1045": "Endkraterriss 1045, längs", "1046": "Endkraterriss 1046, quer", "1047": "Endkraterriss 1047, sternförmig", "1051__1053__1054": "Rissanhäufung 105: 1051 Schweißgut, 1053 WEZ, 1054 Grundwerkstoff", "1061__1063__1064": "Verästelter Riss 106: 1061 Schweißgut, 1063 WEZ, 1064 Grundwerkstoff", "2011": "Pore 2011", "2012": "Gleichmäßig verteilte Porosität 2012", "2013": "Porennest 2013", "2014": "Porenzeile 2014", "2015": "Gaskanal 2015", "2016": "Schlauchpore 2016", "2017": "Oberflächenpore 2017", "2021": "Interdendritischer Lunker 2021", "2024": "Endkraterlunker 2024", "2025": "Offener Endkraterlunker 2025", "3011": "Schlackeneinschluss 3011, linienförmig", "3012": "Schlackeneinschluss 3012, vereinzelt", "3013": "Schlackeneinschluss 3013, örtlich gehäuft", "4011": "Flankenbindefehler 4011", "4012": "Lagenbindefehler 4012", "4012-2": "Lagenbindefehler 4012", "4013": "Wurzelbindefehler 4013", "4013-2": "Wurzelbindefehler 4013", "4014": "Mikrobindefehler 4014", "402": "Ungenügende Durchschweißung 402", "402-2": "Ungenügende Durchschweißung 402, Kehlnaht", "402-3": "Ungenügende Durchschweißung 402", "4021": "Ungenügender Wurzeleinbrand 4021", "403": "Spikebildung 403", "502": "Zu große Nahtüberhöhung 502, Stumpfnaht", "503": "Zu große Nahtüberhöhung 503, Kehlnaht", "504": "Zu große Wurzelüberhöhung 504", "5043": "Zu große Durchschmelzung 5043", "510": "Durchbrand 510", "511": "Decklagenunterwölbung 511", "512": "Übermäßige Ungleichschenkligkeit 512", "515": "Wurzelrückfall 515", "517": "Ansatzfehler 517", "5011": "Durchlaufende Einbrandkerbe 5011", "5012": "Nicht durchlaufende Einbrandkerbe 5012", "5013": "Wurzelkerben 5013", "5014": "Längskerbe zwischen den Lagen 5014", "5015": "Örtlich unterbrochene Einbrandkerbe 5015", "5061": "Schweißgutüberlauf an der Nahtkante 5061", "5062": "Schweißgutüberlauf auf der Wurzelseite 5062", "5071": "Kantenversatz bei Blechen 5071", "5072": "Kantenversatz bei Rohren 5072", "5091": "Verlaufenes Schweißgut 5091, horizontal", "5092": "Verlaufenes Schweißgut 5092, Wannenlage", "5093": "Verlaufenes Schweißgut 5093, Kehlnaht", "5094": "Abschmelzen an der Kante 5094", "608": "Nahtversatz 608", "617": "Schlechte Passung bei Kehlnähten 617", "618": "Schwellung 618"};
@@ -199,15 +200,17 @@ function kb(){
  document.querySelectorAll('#kf label').forEach(l=>{l.hidden=!f.includes(l.dataset.k)});
  $('kp').hidden=!['2a','2b'].includes(Z.k);
  const rw=(a,b,c='')=>`<div class="r"><span>${a}</span><b class="${c}">${b}</b></div>`;
- let h=`<p class="m">${LV[lv]}</p>`;
+ let h=`<p class="m">${LV[lv]}<small style="margin:4px 0 0">Zuordnung nach ISO 10675-1:2022, Tabelle 2</small></p>`;
+ if(PKU&&lv<3&&$('pk').value==='A')h+=`<p class="m wn">⚠ Im Norm-Check ist Prüfklasse A gewählt. Für Zulässigkeitsgrenze ${lv} ist nach ISO 10675-1, Tabelle 2 Prüfklasse B erforderlich${lv===2?' (bei Rundnähten darf nur die Aufnahmeanzahl Klasse A entsprechen)':''}.</p>`;
  const rf=RF[Z.k],refs=[Z.g<2?'ISO 10675-1, Tabelle '+(Z.g?5:4)+', Nr. '+Z.k:'',rf?'ISO 5817:2023, Tabelle 1, Nr. '+rf[0]+' (Seite '+rf[1]+')':''].filter(Boolean).join('; ');
  if(refs)h+=`<p class="m">${refs}</p>`;
- const im=(Z.im||[]).filter(k=>IM5[k]);
- if(im.length)h+='<div class="kg">'+im.map(k=>`<figure><img src="${IM5[k]}" alt="${IC[k]}"><figcaption>${IC[k]}</figcaption></figure>`).join('')+'</div>';
+ let g='';const im=(Z.im||[]).filter(k=>IM5[k]);
+ if(im.length){g+=`<button type="button" id="kvs" class="kb">${VS?'Skizzen ausblenden':'Skizzen anzeigen'} (${im.length})</button>`;
+  if(VS)g+='<div class="kg">'+im.map(k=>`<figure><img src="${IM5[k]}" alt="${IC[k]}"><figcaption>${IC[k]}</figcaption></figure>`).join('')+'</div>'}
  const pp=(Z.ph||[]).filter(k=>PH[k]);
- if(pp.length){h+=`<button type="button" id="kvb" class="kb">${VP?'Vergleichsaufnahmen ausblenden':'Vergleichsaufnahmen anzeigen'} (${pp.length})</button>`;
-  if(VP)h+='<div class="kg kp">'+pp.map(k=>`<figure><img src="${PH[k]}" alt="${PC[k]}"><figcaption>${PC[k]}</figcaption></figure>`).join('')+'</div>'}
- if(Z.lo&&x[Z.lo]>0&&x[Z.lo]<.5){$('o4').innerHTML=h+`<p class="m er">Die Grenzwerte gelten ab ${Z.lo} = 0,5 mm.</p>`;return}
+ if(pp.length){g+=`<button type="button" id="kvb" class="kb">${VP?'Vergleichsaufnahmen ausblenden':'Vergleichsaufnahmen anzeigen'} (${pp.length})</button>`;
+  if(VP)g+='<div class="kg kp">'+pp.map(k=>`<figure><img src="${PH[k]}" alt="${PC[k]}"><figcaption>${PC[k]}</figcaption></figure>`).join('')+'</div>'}
+ if(Z.lo&&x[Z.lo]>0&&x[Z.lo]<.5){$('o4').innerHTML=h+`<p class="m er">Die Grenzwerte gelten ab ${Z.lo} = 0,5 mm.</p>`+g;return}
  const r=Z.r(3-lv,x);
  if(typeof r==='string')h+=rw('Bewertung',r,'wn');
  else if(!r)h+=rw('Bewertung','✖ nicht zulässig','er');
@@ -219,11 +222,12 @@ function kb(){
  }
  if(Z.sm&&r&&typeof r!=='string')h+='<p class="m">Dazu ist ein weicher Übergang erforderlich.</p>';
  if(Z.nt&&r&&typeof r!=='string')h+=`<p class="m">${Z.nt}</p>`;
- $('o4').innerHTML=h;
+ $('o4').innerHTML=h+g;
 }
 
-let VP=false;
-$('o4').addEventListener('click',e=>{if(e.target.id==='kvb'){VP=!VP;kb()}});
+let VP=false,VS=false,PKU=false;
+$('pk').addEventListener('change',()=>{PKU=true});
+$('o4').addEventListener('click',e=>{if(e.target.id==='kvb'){VP=!VP;kb()}else if(e.target.id==='kvs'){VS=!VS;kb()}});
 function run(){
  const q=$('q1').value,fl=$('fl').value,A1=n($('ak').value),D=n($('sw').value),w1=n($('w1').value),F=n($('ffa1').value);
  if(A1>0&&D>0&&w1>0&&F>0){
