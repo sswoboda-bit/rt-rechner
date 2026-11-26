@@ -251,10 +251,11 @@ function run(){
   red=ddi?(ir?(w>10&&w<=25?1:0):(w<=12?1:0)):A?(ir?(w>10&&w<=24?2:w>24&&w<=30?1:0):(w<=24?1:0)):(ir?(w>10&&w<=40?1:0):(w<=20?1:0));
  }
  const fc=A?7.5:15,p=x=>Math.pow(x,.6666667);
- let ffa=null;
+ let ffa=null,rawf=0;
  if(!(d<=0||(ddi?De<=0:big?De<=0||t<=0:t<=0))){
   let r=ddi?fc*d*p(De)+De:bild==='Bild 5'?.5*fc*d*p(t)+t:bild==='Bild 8'?.8*fc*d*p(t)+t:fc*d*p(t)+t;
-  if(big)r=Math.max(r,De);
+  rawf=r;
+  if(big)r=Math.max(r,De+5);
   ffa=Math.round(r);
  }
  let N=null;
@@ -287,7 +288,7 @@ function run(){
    qf+=row('Filmsystemklasse (Tab. 4)','mind. C'+(A?5:3))+row('Aufnahmefolien (Tab. 4)','0,2 mm Blei vorn, 0,1–0,2 mm Blei hinten')+'<p class="fn">Anstelle einer 0,2-mm-Bleifolie dürfen zwei 0,1-mm-Bleifolien verwendet werden (Tab. 4 Fn. b).</p>';
   }else hw.push(['er',`${qs} ist in Tabelle 4 (Al/Ti) nicht aufgeführt.`]);
   if(al)hw.push(['wn','⚠ Werkstoff Al/Ti: IQI und Quellenprüfung sind hier für Stahl berechnet.']);
-  [qs==='Se-75'&&!A&&w<12&&'Se-75 unter 12 mm, Klasse B: Schwärzung mind. 3,0 und Filmsystem mind. C3 (6.9).',ddi&&De>100&&'De > 100 mm.',bild==='Bild 11'&&t>8&&'t > 8 mm: Bild 12 nutzen.',dws&&De>0&&De<=100&&'De ≤ 100: Bild 11 oder 12 nutzen.',bild==='Bild 14'&&De>0&&ffa>De&&'Min-FFA > De: Bild 13 nutzen.',dws&&!FN&&'BPK filmnah (FN) nötig.',['Bild 1','Bild 2','Bild 11','Bild 12'].includes(bild)&&FN&&'FN nur nach Vereinbarung.',(bild==='Bild 5'||bild==='Bild 8')&&FN&&'FN: Vergleichsaufnahme nötig.'].filter(Boolean).forEach(x=>hw.push(['wn','⚠ '+x]));
+  [qs==='Se-75'&&!A&&w<12&&'Se-75 unter 12 mm, Klasse B: Schwärzung mind. 3,0 und Filmsystem mind. C3 (6.9).',ddi&&De>100&&'De > 100 mm.',bild==='Bild 11'&&t>8&&'t > 8 mm: Bild 12 nutzen.',dws&&De>0&&De<=100&&'De ≤ 100: Bild 11 oder 12 nutzen.',bild==='Bild 14'&&De>0&&rawf>De&&'Min-FFA > De: Bild 13 nutzen.',big&&ffa&&De>0&&Math.round(rawf)<De+5&&'FFA mind. De + 5 mm (Abstand durch Equipment).',dws&&!FN&&'BPK filmnah (FN) nötig.',['Bild 1','Bild 2','Bild 11','Bild 12'].includes(bild)&&FN&&'FN nur nach Vereinbarung.',(bild==='Bild 5'||bild==='Bild 8')&&FN&&'FN: Vergleichsaufnahme nötig.'].filter(Boolean).forEach(x=>hw.push(['wn','⚠ '+x]));
  }else hw.unshift(['er','Bitte Wanddicke eingeben.']);
  const h=card('Kennwerte',kw)+(hw.length?card('Hinweise ('+hw.length+')','<ul class="hl">'+hw.map(([c,x])=>`<li class="${c}">${x}</li>`).join('')+'</ul>'):'')+(qf?card('Strahlenquelle und Film',qf):'');
  $('o2').innerHTML=h;
